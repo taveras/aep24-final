@@ -24,4 +24,9 @@ public class Portfolio {
 
         stockQuantities.put(stockToBuy, currentQuantity + quantityToBuy);
     }
+    public int sellStock(Stock stockToSell, int quantityToSell) {
+        var currentQuantity = stockQuantities.get(stockToSell);
+        stockQuantities.put(stockToSell, currentQuantity - quantityToSell);
+        return stockToSell.currentPrice() * quantityToSell;
+    }
 }
