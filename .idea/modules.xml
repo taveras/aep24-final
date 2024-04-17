@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/aep24-final-blackjack.iml" filepath="$PROJECT_DIR$/aep24-final-blackjack.iml" />
+      <module fileurl="file://$PROJECT_DIR$/aep24-final.iml" filepath="$PROJECT_DIR$/aep24-final.iml" />
     </modules>
   </component>
 </project>
