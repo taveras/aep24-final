@@ -26,9 +26,10 @@ public class Portfolio {
     }
     public int sellStock(Stock stockToSell, int quantityToSell) {
         var currentQuantity = stockQuantities.get(stockToSell);
-        if (currentQuantity == null) {
-            throw new RuntimeException("Unable to sell stock");
+        if (currentQuantity == null || quantityToSell > currentQuantity) {
+            throw new RuntimeException("Unable to sell stock that you do not own");
         }
+
         stockQuantities.put(stockToSell, currentQuantity - quantityToSell);
         return stockToSell.currentPrice() * quantityToSell;
     }

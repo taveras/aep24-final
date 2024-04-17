@@ -69,4 +69,16 @@ public class PortfolioTest {
                 () -> p.sellStock(company, 5)
         );
     }
+
+    @Test
+    public void canNotOverSellStock() {
+        Portfolio p = new Portfolio();
+        Stock company = new Stock("XYZ", 50);
+        p.buyStock(company, 3);
+
+        assertThrows(
+                RuntimeException.class,
+                () -> p.sellStock(company, 5)
+        );
+    }
 }
