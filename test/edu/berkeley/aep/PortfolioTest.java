@@ -3,6 +3,7 @@ package edu.berkeley.aep;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertThrows;
 
 public class PortfolioTest {
     @Test
@@ -57,5 +58,15 @@ public class PortfolioTest {
 
         assertEquals(50, p.sellStock(company, 1));
         assertEquals(100, p.currentValue());
+    }
+    @Test
+    public void canNotSellStockYouDoNotHave() {
+        Portfolio p = new Portfolio();
+        Stock company = new Stock("XYZ", 50);
+
+        assertThrows(
+                RuntimeException.class,
+                () -> p.sellStock(company, 5)
+        );
     }
 }
