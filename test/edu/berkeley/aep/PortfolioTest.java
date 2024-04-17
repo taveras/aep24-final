@@ -19,6 +19,16 @@ public class PortfolioTest {
         assertEquals(50, p.currentValue());
     }
     @Test
+    public void shouldBeAbleToBuyMultipleOrdersOfTheSameStock() {
+        Portfolio p = new Portfolio();
+        Stock company = new Stock("XYZ", 50);
+
+        p.buyStock(company, 1);
+        p.buyStock(company, 2);
+        p.buyStock(company, 3);
+        assertEquals(300, p.currentValue());
+    }
+    @Test
     public void currentValueShouldIncreaseWhenStockIncreases() {
         Portfolio p = new Portfolio();
         Stock company = new Stock("XYZ", 50);

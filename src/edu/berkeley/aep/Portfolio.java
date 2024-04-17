@@ -15,7 +15,13 @@ public class Portfolio {
         return result;
     }
 
-    public void buyStock(Stock stockToBuy, int quantity) {
-        stockQuantities.put(stockToBuy, quantity);
+    public void buyStock(Stock stockToBuy, int quantityToBuy) {
+        var currentQuantity = stockQuantities.get(stockToBuy);
+        if (currentQuantity == null) {
+            stockQuantities.put(stockToBuy, quantityToBuy);
+            return;
+        }
+
+        stockQuantities.put(stockToBuy, currentQuantity + quantityToBuy);
     }
 }
