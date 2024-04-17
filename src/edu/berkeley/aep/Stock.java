@@ -18,4 +18,8 @@ public class Stock {
     public void increasePrice(int amount) {
         price += amount;
     }
+
+    public void decreasePrice(int amount) {
+        price -= amount;
+    }
 }

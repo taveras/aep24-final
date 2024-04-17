@@ -17,4 +17,11 @@ public class StockTest {
         company.increasePrice(5);
         assertEquals(105, company.currentPrice());
     }
+
+    @Test
+    public void canDecreasePrice() {
+        Stock company = new Stock("ABC", 100);
+        company.decreasePrice(5);
+        assertEquals(95, company.currentPrice());
+    }
 }
