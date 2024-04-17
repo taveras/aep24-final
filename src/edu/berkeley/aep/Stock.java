@@ -14,4 +14,8 @@ public class Stock {
     public int currentPrice() {
         return price;
     }
+
+    public void increasePrice(int amount) {
+        price += amount;
+    }
 }
