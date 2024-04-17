@@ -3,6 +3,7 @@ package edu.berkeley.aep;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertThrows;
 
 public class StockTest {
     @Test
@@ -16,6 +17,15 @@ public class StockTest {
         Stock company = new Stock("ABC", 100);
         company.increasePrice(5);
         assertEquals(105, company.currentPrice());
+    }
+
+    @Test
+    public void canNotIncreasePriceByNegativeNumber() {
+        Stock company = new Stock("ABC", 100);
+        assertThrows(
+                RuntimeException.class,
+                () -> company.increasePrice(-5)
+        );
     }
 
     @Test
