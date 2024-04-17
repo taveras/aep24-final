@@ -34,4 +34,13 @@ public class StockTest {
         company.decreasePrice(5);
         assertEquals(95, company.currentPrice());
     }
+
+    @Test
+    public void canNotDecreasePriceByNegativeNumber() {
+        Stock company = new Stock("ABC", 100);
+        assertThrows(
+                RuntimeException.class,
+                () -> company.decreasePrice(-5)
+        );
+    }
 }
