@@ -18,4 +18,23 @@ public class PortfolioTest {
         p.buyStock(company, 1);
         assertEquals(50, p.currentValue());
     }
+    @Test
+    public void currentValueShouldIncreaseWhenStockIncreases() {
+        Portfolio p = new Portfolio();
+        Stock company = new Stock("XYZ", 50);
+
+        p.buyStock(company, 1);
+        company.increasePrice(5);
+        assertEquals(55, p.currentValue());
+    }
+
+    @Test
+    public void currentValueShouldDecreaseWhenStockIncreases() {
+        Portfolio p = new Portfolio();
+        Stock company = new Stock("XYZ", 50);
+
+        p.buyStock(company, 1);
+        company.decreasePrice(5);
+        assertEquals(45, p.currentValue());
+    }
 }
